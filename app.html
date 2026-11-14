@@ -1,0 +1,226 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>WCA App Mockups</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+<style>
+@page{size:11in 8.5in;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Helvetica Neue',Arial,sans-serif;background:#0A0B0D;color:#E9EDF2;-webkit-font-smoothing:antialiased}
+.sheet{width:1056px;height:816px;padding:38px 46px;position:relative;page-break-after:always;background:
+  radial-gradient(700px 380px at 82% 0%,rgba(255,105,0,.14),transparent 62%),#0A0B0D;overflow:hidden}
+.sheet:last-child{page-break-after:auto}
+.top{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:22px}
+.eyebrow{font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:#FF6900;font-weight:800}
+h1{font-size:37px;line-height:1.06;letter-spacing:-.02em;font-weight:800;margin-top:8px}
+h1 em{font-style:normal;color:#FF6900}
+.meta{text-align:right;font-size:10.5px;color:#8A94A3;letter-spacing:.1em;text-transform:uppercase;line-height:1.9}
+.devices{display:flex;gap:26px;align-items:flex-start;justify-content:center}
+.dev{position:relative}
+.label{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#8A94A3;margin-bottom:9px;text-align:center}
+
+/* iPhone */
+.iphone{width:236px;height:486px;border-radius:36px;background:#15171B;padding:9px;
+  box-shadow:0 26px 50px rgba(0,0,0,.55),inset 0 0 0 2px #2B2F36;position:relative}
+.iphone .screen{width:100%;height:100%;border-radius:28px;overflow:hidden;background:#0E1013;position:relative}
+.notch{position:absolute;top:7px;left:50%;transform:translateX(-50%);width:72px;height:19px;background:#15171B;border-radius:0 0 12px 12px;z-index:9}
+.ios-status{position:absolute;top:6px;left:0;right:0;display:flex;justify-content:space-between;padding:0 20px;font-size:8px;color:#C8D0DA;z-index:8}
+
+/* Android */
+.pixel{width:236px;height:486px;border-radius:24px;background:#15171B;padding:8px;
+  box-shadow:0 26px 50px rgba(0,0,0,.55),inset 0 0 0 2px #2B2F36}
+.pixel .screen{width:100%;height:100%;border-radius:17px;overflow:hidden;background:#0E1013;position:relative}
+.punch{position:absolute;top:12px;left:50%;transform:translateX(-50%);width:11px;height:11px;border-radius:50%;background:#000;z-index:9}
+.and-status{position:absolute;top:8px;left:0;right:0;display:flex;justify-content:space-between;padding:0 14px;font-size:8px;color:#C8D0DA;z-index:8}
+
+/* shared app UI */
+.app{position:absolute;inset:0;display:flex;flex-direction:column;padding-top:26px}
+.appbar{padding:10px 14px 6px;display:flex;align-items:center;justify-content:space-between}
+.appbar b{font-size:13px;letter-spacing:.02em}
+.appbar span{font-size:9px;color:#8A94A3}
+.hero-card{margin:8px 12px;border-radius:14px;padding:13px;background:linear-gradient(135deg,#1B1E23,#131519);border:1px solid #262A31}
+.hero-card .k{font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;color:#FF6900;font-weight:800}
+.hero-card h3{font-size:15px;margin:5px 0 3px;line-height:1.2}
+.hero-card p{font-size:9.5px;color:#9AA4B2;line-height:1.45}
+.cta-btn{margin-top:10px;background:#FF6900;color:#120A03;font-size:10px;font-weight:800;text-align:center;
+  padding:9px;border-radius:9px;letter-spacing:.03em}
+.section-t{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#727C8A;padding:12px 14px 6px;font-weight:800}
+.row{display:flex;align-items:center;gap:9px;padding:9px 12px;margin:0 8px 6px;border-radius:11px;background:#14171B;border:1px solid #22262C}
+.row .dot{width:30px;height:30px;border-radius:9px;background:rgba(255,105,0,.16);border:1px solid rgba(255,105,0,.4);
+  display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;color:#FF6900;flex:none}
+.row .t{flex:1}
+.row .t b{display:block;font-size:10.5px;margin-bottom:2px}
+.row .t span{font-size:8.5px;color:#8A94A3}
+.row .sp{font-size:8.5px;color:#5FD08B;font-weight:700;white-space:nowrap}
+.row .sp.hot{color:#FFB020}
+.tabbar{margin-top:auto;display:flex;justify-content:space-around;padding:9px 6px 12px;border-top:1px solid #1E2228;background:#0B0D10}
+.tabbar div{font-size:7.5px;color:#5F6875;text-align:center;letter-spacing:.04em}
+.tabbar div.on{color:#FF6900;font-weight:800}
+.tabbar i{display:block;font-size:12px;font-style:normal;margin-bottom:2px}
+.fab{position:absolute;right:14px;bottom:56px;width:40px;height:40px;border-radius:14px;background:#FF6900;
+  color:#120A03;font-size:17px;font-weight:800;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 22px rgba(255,105,0,.4)}
+.chat-row{display:flex;gap:7px;padding:0 12px;margin-bottom:7px}
+.bub{font-size:9px;line-height:1.4;padding:8px 10px;border-radius:11px;max-width:78%}
+.bub.bot{background:#171A1F;border:1px solid #262A31;color:#D3DAE3;border-bottom-left-radius:3px}
+.bub.me{background:#FF6900;color:#180B02;margin-left:auto;border-bottom-right-radius:3px;font-weight:600}
+.chips{display:flex;gap:5px;flex-wrap:wrap;padding:0 12px;margin-bottom:8px}
+.chip{font-size:8px;padding:5px 8px;border-radius:999px;border:1px solid #2C313A;color:#A9B3C0;background:#12151A}
+.confirm{position:absolute;inset:0;background:rgba(8,9,11,.9);display:flex;align-items:center;justify-content:center;padding:20px}
+.confirm .box{background:#12151A;border:1px solid #262A31;border-radius:16px;padding:16px;text-align:center;width:100%}
+.confirm .tick{width:38px;height:38px;border-radius:50%;background:rgba(95,208,139,.14);border:1px solid rgba(95,208,139,.5);
+  color:#5FD08B;font-size:19px;display:flex;align-items:center;justify-content:center;margin:0 auto 9px}
+.confirm h4{font-size:13px;margin-bottom:4px}
+.confirm p{font-size:9px;color:#8A94A3;line-height:1.45}
+.note{margin-top:20px;display:flex;gap:12px}
+.note div{flex:1;background:rgba(255,255,255,.035);border:1px solid #23272E;border-radius:10px;padding:10px 12px}
+.note b{font-size:9.5px;color:#FF6900;letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:4px}
+.note span{font-size:9.5px;color:#98A2B0;line-height:1.45}
+ body{font-family:'Inter',Helvetica,Arial,sans-serif}</style></head>
+<body><div class="sheet">
+  <div class="top">
+    <div><div class="eyebrow">West Coast Athletics · iOS</div>
+      <h1>The gym in their <em>pocket.</em></h1></div>
+    <div class="meta">App concept mockup<br>LNL Solutions · Nov 2026</div>
+  </div>
+  <div class="devices">
+    <div class="dev"><div class="label">01 · Home</div>
+<div class="iphone"><div class="notch"></div>
+<div class="ios-status"><span>9:41</span><span>5G &nbsp; 89%</span></div>
+<div class="screen"><div class="app">
+  <div class="appbar"><div><b>West Coast</b><span>&nbsp;Athletics</span></div><span>Placentia</span></div>
+  <div class="hero-card">
+    <div class="k">Next up · today</div>
+    <h3>Boxing Fundamentals</h3>
+    <p>5:30 PM with Coach Ray · 4 spots left</p>
+    <div class="cta-btn">Reserve My Spot</div>
+  </div>
+  <div class="section-t">Your week</div>
+  <div class="row"><div class="dot">3</div><div class="t"><b>3 sessions done</b><span>Goal: 4 this week</span></div><div class="sp">On track</div></div>
+  <div class="row"><div class="dot">PT</div><div class="t"><b>Personal training</b><span>Thu 6:00 AM · Coach Ray</span></div><div class="sp">Confirmed</div></div>
+  <div class="tabbar"><div class="on"><i>◉</i>Home</div><div><i>▤</i>Schedule</div>
+<div><i>▦</i>Programs</div><div><i>◈</i>Coach</div><div><i>☰</i>Account</div></div>
+</div></div></div></div>
+    <div class="dev"><div class="label">02 · Schedule</div>
+<div class="iphone"><div class="notch"></div>
+<div class="ios-status"><span>9:41</span><span>5G &nbsp; 89%</span></div>
+<div class="screen"><div class="app">
+  <div class="appbar"><div><b>Schedule</b></div><span>Nov 14 – 20</span></div>
+  <div class="section-t">Friday</div>
+  <div class="row"><div class="dot">6A</div><div class="t"><b>Strength &amp; Conditioning</b><span>45 min · All levels</span></div><div class="sp">6 left</div></div>
+  <div class="row"><div class="dot">5P</div><div class="t"><b>Boxing Fundamentals</b><span>60 min · Beginners welcome</span></div><div class="sp hot">4 left</div></div>
+  <div class="row"><div class="dot">6P</div><div class="t"><b>Muay Thai</b><span>60 min · Intermediate</span></div><div class="sp">Waitlist</div></div>
+  <div class="row"><div class="dot">7P</div><div class="t"><b>BJJ Gi</b><span>75 min · All levels</span></div><div class="sp">9 left</div></div>
+  <div class="section-t">Saturday</div>
+  <div class="row"><div class="dot">9A</div><div class="t"><b>Youth Athletics</b><span>45 min · Ages 8 to 12</span></div><div class="sp">5 left</div></div>
+  <div class="tabbar"><div class="on"><i>◉</i>Home</div><div><i>▤</i>Schedule</div>
+<div><i>▦</i>Programs</div><div><i>◈</i>Coach</div><div><i>☰</i>Account</div></div>
+</div></div></div></div>
+    <div class="dev"><div class="label">03 · Program</div>
+<div class="iphone"><div class="notch"></div>
+<div class="ios-status"><span>9:41</span><span>5G &nbsp; 89%</span></div>
+<div class="screen"><div class="app">
+  <div class="appbar"><div><b>Boxing</b></div><span>◀ Programs</span></div>
+  <div class="hero-card">
+    <div class="k">Program</div>
+    <h3>Boxing</h3>
+    <p>Real technique and conditioning, coached in small groups. Beginner classes run three nights a week.</p>
+    <div class="cta-btn">Book Free Intro Class</div>
+  </div>
+  <div class="section-t">What you get</div>
+  <div class="row"><div class="dot">1</div><div class="t"><b>Coached rounds</b><span>Pad work every class</span></div></div>
+  <div class="row"><div class="dot">2</div><div class="t"><b>Progress tracking</b><span>Skills checked off in app</span></div></div>
+  <div class="row"><div class="dot">3</div><div class="t"><b>Makeup sessions</b><span>Miss a class, book another</span></div></div>
+  <div class="tabbar"><div class="on"><i>◉</i>Home</div><div><i>▤</i>Schedule</div>
+<div><i>▦</i>Programs</div><div><i>◈</i>Coach</div><div><i>☰</i>Account</div></div>
+</div></div></div></div>
+    <div class="dev"><div class="label">04 · Assistant</div>
+<div class="iphone"><div class="notch"></div>
+<div class="ios-status"><span>9:41</span><span>5G &nbsp; 89%</span></div>
+<div class="screen"><div class="app">
+  <div class="appbar"><div><b>Coach</b></div><span>Online</span></div>
+  <div class="section-t">Ask about classes, training or your goal</div>
+  <div class="chat-row"><div class="bub bot">Hey, this is the WCA assistant. What are you training for: fitness, a specific sport, or self defense?</div></div>
+  <div class="chat-row"><div class="bub me">Want to try boxing, never trained before</div></div>
+  <div class="chat-row"><div class="bub bot">Perfect. Boxing Fundamentals Tuesday 5:30 PM is built for first-timers. Want me to hold a spot for the free intro?</div></div>
+  <div class="chips"><div class="chip">Yes, book it</div><div class="chip">Show other times</div><div class="chip">Ask a coach</div></div>
+  <div class="tabbar"><div class="on"><i>◉</i>Home</div><div><i>▤</i>Schedule</div>
+<div><i>▦</i>Programs</div><div><i>◈</i>Coach</div><div><i>☰</i>Account</div></div>
+</div></div></div></div>
+  </div>
+  <div class="note">
+    <div><b>Native feel</b><span>Bottom tab bar, large titles and rubber-band scrolling, built with SwiftUI so it matches what iPhone users already expect.</span></div>
+    <div><b>Book in two taps</b><span>Next class is on the home screen with live spot counts, so booking never requires the schedule page.</span></div>
+    <div><b>Push that earns its keep</b><span>Class reminders, waitlist openings and "you're 1 session from your goal" nudges, all opt-in per member.</span></div>
+  </div>
+</div><div class="sheet">
+  <div class="top">
+    <div><div class="eyebrow">West Coast Athletics · Android</div>
+      <h1>Same power, <em>Material</em> native.</h1></div>
+    <div class="meta">App concept mockup<br>LNL Solutions · Nov 2026</div>
+  </div>
+  <div class="devices">
+    <div class="dev"><div class="label">01 · Home</div>
+<div class="pixel"><div class="punch"></div>
+<div class="and-status"><span>9:41</span><span>5G &nbsp; 89%</span></div>
+<div class="screen"><div class="app">
+  <div class="appbar" style="padding-top:16px"><div><b>West Coast Athletics</b><br><span>Placentia · 120 N Bradford</span></div><span>≡</span></div>
+  <div class="hero-card" style="border-radius:10px">
+    <div class="k">Today · 5:30 PM</div>
+    <h3>Boxing Fundamentals</h3>
+    <p>4 spots left · 60 min · Coach Ray</p>
+    <div class="cta-btn" style="border-radius:6px">Reserve Spot</div>
+  </div>
+  <div class="section-t">Quick actions</div>
+  <div class="row" style="border-radius:8px"><div class="dot">▤</div><div class="t"><b>Book a class</b><span>Full week schedule</span></div></div>
+  <div class="row" style="border-radius:8px"><div class="dot">PT</div><div class="t"><b>Book personal training</b><span>1 on 1 with a coach</span></div></div>
+  <div class="tabbar"><div class="on"><i>◉</i>Home</div><div><i>▤</i>Schedule</div>
+<div><i>▦</i>Programs</div><div><i>◈</i>Coach</div><div><i>☰</i>Account</div></div>
+  <div class="fab">+</div>
+</div></div></div></div>
+    <div class="dev"><div class="label">02 · Schedule</div>
+<div class="pixel"><div class="punch"></div>
+<div class="and-status"><span>9:41</span><span>5G &nbsp; 89%</span></div>
+<div class="screen"><div class="app">
+  <div class="appbar" style="padding-top:16px"><div><b>Schedule</b><br><span>Filter: All programs</span></div><span>≡</span></div>
+  <div class="chips" style="padding:0 12px 4px"><div class="chip" style="border-color:#FF6900;color:#FF6900">Today</div><div class="chip">This week</div><div class="chip">Boxing</div><div class="chip">BJJ</div></div>
+  <div class="row" style="border-radius:8px"><div class="dot">6A</div><div class="t"><b>Strength &amp; Conditioning</b><span>45 min</span></div><div class="sp">6 left</div></div>
+  <div class="row" style="border-radius:8px"><div class="dot">5P</div><div class="t"><b>Boxing Fundamentals</b><span>60 min · Beginner</span></div><div class="sp hot">4 left</div></div>
+  <div class="row" style="border-radius:8px"><div class="dot">7P</div><div class="t"><b>BJJ Gi</b><span>75 min</span></div><div class="sp">9 left</div></div>
+  <div class="tabbar"><div class="on"><i>◉</i>Home</div><div><i>▤</i>Schedule</div>
+<div><i>▦</i>Programs</div><div><i>◈</i>Coach</div><div><i>☰</i>Account</div></div>
+  <div class="fab">+</div>
+</div></div></div></div>
+    <div class="dev"><div class="label">03 · Youth</div>
+<div class="pixel"><div class="punch"></div>
+<div class="and-status"><span>9:41</span><span>5G &nbsp; 89%</span></div>
+<div class="screen"><div class="app">
+  <div class="appbar" style="padding-top:16px"><div><b>Youth Athletics</b><br><span>Ages 8 to 12</span></div><span>≡</span></div>
+  <div class="hero-card" style="border-radius:10px">
+    <div class="k">Kids &amp; youth</div>
+    <h3>Build confidence early</h3>
+    <p>Coordination, discipline and athletic ability in a structured session. Parents watch from the lounge.</p>
+    <div class="cta-btn" style="border-radius:6px">Book Free Trial Class</div>
+  </div>
+  <div class="section-t">Parent tools</div>
+  <div class="row" style="border-radius:8px"><div class="dot">✓</div><div class="t"><b>Check in</b><span>Scan at the front desk</span></div></div>
+  <div class="row" style="border-radius:8px"><div class="dot">↺</div><div class="t"><b>Makeup class</b><span>Book a missed session</span></div></div>
+  <div class="tabbar"><div class="on"><i>◉</i>Home</div><div><i>▤</i>Schedule</div>
+<div><i>▦</i>Programs</div><div><i>◈</i>Coach</div><div><i>☰</i>Account</div></div>
+  <div class="fab">+</div>
+</div></div></div></div>
+    <div class="dev"><div class="label">04 · Assistant</div>
+<div class="pixel"><div class="punch"></div>
+<div class="and-status"><span>9:41</span><span>5G &nbsp; 89%</span></div>
+<div class="screen"><div class="app">
+  <div class="appbar" style="padding-top:16px"><div><b>WCA Assistant</b><br><span>Replies instantly, 24/7</span></div><span>⋮</span></div>
+  <div class="section-t">Get matched to a program</div>
+  <div class="chat-row"><div class="bub bot">Looking for yourself or your kid?</div></div>
+  <div class="chips"><div class="chip">My kid</div><div class="chip">Myself</div></div>
+  <div class="chat-row"><div class="bub me">My kid, 10 years old, wants to try martial arts</div></div>
+  <div class="chat-row"><div class="bub bot">Great age to start. Youth Martial Arts runs Mon and Wed at 5 PM. First class is free. Want Thursday 5 PM instead?</div></div>
+  <div class="chips"><div class="chip">Book Mon 5 PM</div><div class="chip">Thu works</div></div>
+</div></div></div></div>
+  </div>
+  <div class="note">
+    <div><b>Material 3</b><span>Kotlin and Jetpack Compose: FAB for quick booking, filter chips on schedule, list rows that show live capacity.</span></div>
+    <div><b>One codebase option</b><span>If speed matters more than native depth, a single React Native build ships both stores in about half the time.</span></div>
+    <div><b>Why an app at all</b><span>Push notifications recover missed classes, and check-in data shows exactly which programs retain members.</span></div>
+  </div>
+</div></body></html>
